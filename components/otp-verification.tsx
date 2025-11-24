@@ -186,7 +186,7 @@ export function OTPVerification({ email, pid, onVerified, onBack }: OTPVerificat
               disabled={isLoading || isSending}
               dir="ltr"
             />
-            <p className="text-xs text-muted-foreground">أدخل الكود المكون من 6 أرقام</p>
+            <p className="text-xs text-muted-foreground">أدخل الكود المكون من 6 أرقام رجاءا</p>
           </div>
 
           <Button type="submit" className="w-full hover:cursor-pointer" disabled={isLoading || isSending || otp.length !== 6}>
