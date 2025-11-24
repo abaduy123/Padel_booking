@@ -4,7 +4,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Clock, Loader2 } from "lucide-react"
-import { useTransition } from "react"
+import { useState } from "react"
 
 interface FieldCardProps {
   id: string
@@ -25,13 +25,16 @@ export function FieldCard({
   type,
   description
 }: FieldCardProps) {
-  const [isPending, startTransition] = useTransition()
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleClick = (e: any) => {
     e.preventDefault()
-    startTransition(() => {
+    setIsLoading(true)
+
+    // Simulate page navigation delay
+    setTimeout(() => {
       window.location.href = `/booking/${id}`
-    })
+    }, 200) // small delay to show loader
   }
 
   const hasDiscount = discountedprice < originalprice
@@ -62,10 +65,10 @@ export function FieldCard({
         {/* Type */}
         <p className="text-sm text-muted-foreground mt-1">{type}</p>
 
-        {/* NEW: Description */}
-        <div className="">
-                        <span className="font-bold text-black">المزايا: </span>
-                        <span className="text-sm text-muted-foreground mt-1">{description}</span>
+        {/* Description */}
+        <div>
+          <span className="font-bold text-black">المزايا: </span>
+          <span className="text-sm text-muted-foreground mt-1">{description}</span>
         </div>
       </CardContent>
 
@@ -104,11 +107,11 @@ export function FieldCard({
         {/* Button */}
         <Button
           onClick={handleClick}
-          disabled={isPending}
+          disabled={isLoading}
           className="bg-primary hover:bg-primary/90 text-primary-foreground 
-                     min-w-[100px] sm:min-w-[110px] py-2 sm:py-3 rounded-lg hover:cursor-pointer"
+                     min-w-[100px] sm:min-w-[110px] py-2 sm:py-3 rounded-lg hover:cursor-pointer flex items-center justify-center"
         >
-          {isPending ? (
+          {isLoading ? (
             <>
               <Loader2 className="animate-spin h-4 w-4 ml-1" />
               جاري التحميل…
