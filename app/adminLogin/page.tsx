@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
@@ -37,7 +35,7 @@ export default function AdminLoginForm() {
       }
 
       // Successful login, redirect to admin dashboard
-      router.push("/admin");
+      router.push("/admin/reservations");
     } catch (err) {
       console.error("[Admin Login Error]", err);
       setMessage("حدث خطأ داخلي في الخادم");
@@ -48,7 +46,7 @@ export default function AdminLoginForm() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
+      
       <div className="flex-1 flex items-center justify-center py-12 px-4">
         <Card className="w-full max-w-md">
           <CardHeader className="text-center">
@@ -82,7 +80,7 @@ export default function AdminLoginForm() {
           </CardContent>
         </Card>
       </div>
-      <Footer />
+     
     </div>
   );
 }

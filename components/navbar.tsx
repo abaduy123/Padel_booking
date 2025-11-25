@@ -12,7 +12,7 @@ export function Navbar() {
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
               <Calendar className="h-6 w-6 text-primary-foreground" />
             </div>
-            <span className="text-xl font-bold text-foreground">حجز البادل</span>
+            
           </Link>
           <div className="flex items-center gap-6">
             <Link href="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
