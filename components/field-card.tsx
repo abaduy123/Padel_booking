@@ -34,6 +34,7 @@ export function FieldCard({
     // Simulate page navigation delay
     setTimeout(() => {
       window.location.href = `/booking/${id}`
+      setIsLoading(false)
     }, 200) // small delay to show loader
   }
 
