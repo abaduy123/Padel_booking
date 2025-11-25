@@ -70,8 +70,8 @@ export default async function Home() {
                     : "/padel-female-pink-removebg-preview.png"
                 }
                 type={field.fieldtype === "m" ? "ملعب رجالي" : "ملعب نسائي"}
-                originalprice={field.original_cost}
-                discountedprice={field.final_cost}
+                originalprice={field.original_cost ?? field.fieldcost} // FIX HERE
+                discountedprice={field.final_cost ?? field.fieldcost}  // FIX HERE
                 description={field.description}
               />
             ))}
