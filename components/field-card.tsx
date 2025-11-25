@@ -81,7 +81,7 @@ export function FieldCard({
               <p className="text-xl sm:text-2xl font-bold text-primary">
                 {originalprice} ريال
               </p>
-              <p className="text-xs text-muted-foreground">للساعة</p>
+            
             </>
           )}
 
@@ -100,7 +100,7 @@ export function FieldCard({
                 خصم {Math.round(((originalprice - discountedprice) / originalprice) * 100)}%
               </span>
 
-              <p className="text-xs text-muted-foreground mt-1">للساعة</p>
+              
             </>
           )}
         </div>
