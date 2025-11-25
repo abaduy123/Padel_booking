@@ -1,9 +1,14 @@
+export const dynamic = "force-dynamic";
+
+
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { FieldCard } from "@/components/field-card"
 import { Sparkles } from "lucide-react"
 import Image from "next/image"
 import { fetchFieldsWithDiscounts } from "@/lib/discount";
+
+
 
 export default async function Home() {
   const fields = await fetchFieldsWithDiscounts();
